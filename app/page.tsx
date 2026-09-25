@@ -37,7 +37,7 @@ function FloatingHearts() {
         duration: 8 + Math.random() * 6,
         size: 14 + Math.random() * 22,
       })),
-    []
+    [],
   );
 
   return (
@@ -91,7 +91,7 @@ export default function Home() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="animate-pulseSoft text-5xl font-extrabold sm:text-7xl"
         >
-          Ăn Ủi 💗
+          An Ủi 💗
         </motion.h1>
 
         <motion.p
@@ -181,11 +181,7 @@ export default function Home() {
             className="absolute h-40 w-40 rounded-full bg-blush-500/40 blur-xl"
           />
           <motion.div
-            animate={
-              breathing
-                ? { scale: [1, 1.4, 1.4, 1] }
-                : { scale: 1 }
-            }
+            animate={breathing ? { scale: [1, 1.4, 1.4, 1] } : { scale: 1 }}
             transition={
               breathing
                 ? { duration: 14, times: [0, 0.28, 0.57, 1], repeat: Infinity }
@@ -219,8 +215,8 @@ export default function Home() {
           Vài giai điệu để nghe cho đã
         </motion.h2>
         <p className="mt-3 max-w-md text-blush-100/70">
-          Đôi khi khóc theo một bài hát cũng là một cách chữa lành. Nghe thử
-          vài bài của HUI (Pentagon) ngay bên dưới.
+          Đôi khi khóc theo một bài hát cũng là một cách chữa lành. Nghe thử vài
+          bài của HUI (Pentagon) ngay bên dưới.
         </p>
 
         <div className="mt-10 flex w-full max-w-2xl flex-col gap-8">
@@ -265,8 +261,8 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-16 max-w-md text-sm text-blush-200/60"
         >
-          Dù hôm nay có tệ đến đâu, ngày mai bạn vẫn sẽ thức dậy, vẫn sẽ ổn.
-          Cảm ơn bạn vì đã ghé qua đây. 💗
+          Dù hôm nay có tệ đến đâu, ngày mai bạn vẫn sẽ thức dậy, vẫn sẽ ổn. Cảm
+          ơn bạn vì đã ghé qua đây. 💗
         </motion.p>
       </section>
     </main>
