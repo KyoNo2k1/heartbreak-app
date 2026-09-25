@@ -16,11 +16,9 @@ const quotes = [
   "Bạn không cô đơn đâu, có rất nhiều người đã đi qua và đã ổn trở lại.",
 ];
 
-const songs = [
-  { title: "Cứ Chill Thôi", artist: "để tim nhẹ lại" },
-  { title: "Một Bước Yêu Vạn Dặm Đau", artist: "khóc cho đã rồi thôi" },
-  { title: "Sao Ta Không Còn Như Xưa", artist: "chậm lại và cảm nhận" },
-  { title: "Tuý Âm", artist: "hát thật to cho hết buồn" },
+const spotifyArtists = [
+  { id: "4R0tSGcVRQ8ZXPzttU8mHy", label: "HUI (Pentagon)" },
+  { id: "3BkkCvZ3madDPhOomgwZIU", label: "HUI" },
 ];
 
 const steps = [
@@ -39,7 +37,7 @@ function FloatingHearts() {
         duration: 8 + Math.random() * 6,
         size: 14 + Math.random() * 22,
       })),
-    [],
+    []
   );
 
   return (
@@ -93,7 +91,7 @@ export default function Home() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="animate-pulseSoft text-5xl font-extrabold sm:text-7xl"
         >
-          An Ủi 💗
+          Ăn Ủi 💗
         </motion.h1>
 
         <motion.p
@@ -183,7 +181,11 @@ export default function Home() {
             className="absolute h-40 w-40 rounded-full bg-blush-500/40 blur-xl"
           />
           <motion.div
-            animate={breathing ? { scale: [1, 1.4, 1.4, 1] } : { scale: 1 }}
+            animate={
+              breathing
+                ? { scale: [1, 1.4, 1.4, 1] }
+                : { scale: 1 }
+            }
             transition={
               breathing
                 ? { duration: 14, times: [0, 0.28, 0.57, 1], repeat: Infinity }
@@ -217,22 +219,41 @@ export default function Home() {
           Vài giai điệu để nghe cho đã
         </motion.h2>
         <p className="mt-3 max-w-md text-blush-100/70">
-          Đôi khi khóc theo một bài hát cũng là một cách chữa lành.
+          Đôi khi khóc theo một bài hát cũng là một cách chữa lành. Nghe thử
+          vài bài của HUI (Pentagon) ngay bên dưới.
         </p>
 
-        <div className="mt-10 grid w-full max-w-2xl gap-4 sm:grid-cols-2">
-          {songs.map((s, i) => (
+        <div className="mt-10 flex w-full max-w-2xl flex-col gap-8">
+          {spotifyArtists.map((artist, i) => (
             <motion.div
-              key={s.title}
+              key={artist.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
-              className="rounded-2xl border border-blush-300/20 bg-white/5 p-5 text-left backdrop-blur"
+              transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <p className="font-semibold text-blush-100">🎵 {s.title}</p>
-              <p className="text-sm text-blush-200/70">{s.artist}</p>
+              <p className="mb-2 text-left text-sm font-semibold text-blush-200/80">
+                {artist.label}
+              </p>
+              <div className="overflow-hidden rounded-2xl border border-blush-300/20 bg-white/5 backdrop-blur">
+                <iframe
+                  title={`${artist.label} trên Spotify`}
+                  src={`https://open.spotify.com/embed/artist/${artist.id}?utm_source=generator&theme=0`}
+                  width="100%"
+                  height="352"
+                  style={{ border: 0 }}
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+              <a
+                href={`https://open.spotify.com/artist/${artist.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block text-sm text-blush-300 underline underline-offset-4 hover:text-blush-200"
+              >
+                Mở trong Spotify →
+              </a>
             </motion.div>
           ))}
         </div>
@@ -244,8 +265,8 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-16 max-w-md text-sm text-blush-200/60"
         >
-          Dù hôm nay có tệ đến đâu, ngày mai bạn vẫn sẽ thức dậy, vẫn sẽ ổn. Cảm
-          ơn bạn vì đã ghé qua đây. 💗
+          Dù hôm nay có tệ đến đâu, ngày mai bạn vẫn sẽ thức dậy, vẫn sẽ ổn.
+          Cảm ơn bạn vì đã ghé qua đây. 💗
         </motion.p>
       </section>
     </main>

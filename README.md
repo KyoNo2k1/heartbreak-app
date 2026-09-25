@@ -1,4 +1,4 @@
-# An Ủi 💗 — Trang web an ủi khi thất tình
+# Ăn Ủi 💗 — Trang web an ủi khi thất tình
 
 Dự án Next.js (App Router) + Tailwind CSS + Framer Motion.
 
